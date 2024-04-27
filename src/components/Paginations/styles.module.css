@@ -1,0 +1,57 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.arrow, .pageNumber {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    padding: 8px;
+    border: none;
+    z-index: 1;
+    position: relative;
+    background-color: transparent;
+}
+
+.arrow:not(:disabled),
+.pageNumber:not(:disabled) {
+    cursor: pointer;
+}
+
+.arrow:disabled, .pageNumber:disabled {
+    color: #d2d4d5;
+}
+
+.arrow {
+    bottom: 1px;
+}
+
+.arrow:active:not(:disabled),
+.pageNumber:active:not(:disabled) {
+    color: #fff;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow:active:not(:disabled)::before,
+.pageNumber:active:not(:disabled)::before {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #9c9c9c;
+}
